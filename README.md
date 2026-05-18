@@ -26,8 +26,10 @@ git clone https://github.com/ShajeeAmjad/UniMic.git
 cd UniMic
 python -m venv venv
 venv\Scripts\activate
-pip install -r requirements.txt
+pip install .
 ```
+
+> Use `pip install -e .` instead if you want to edit the source without reinstalling.
 
 ## Usage
 
@@ -35,13 +37,13 @@ Open **two terminals** (both with the venv activated):
 
 **Terminal 1 — Start the server:**
 ```bash
-python server.py
+unimic-server
 ```
 Wait for `Model loaded. Ready to transcribe.` before continuing.
 
 **Terminal 2 — Start the client:**
 ```bash
-python client.py
+unimic-client
 ```
 
 **Voice typing:**
@@ -52,7 +54,7 @@ python client.py
 
 ## Configuration
 
-The server URL is stored as a constant in `client.py`:
+The server URL is stored as a constant in `unimic/client.py`:
 
 ```python
 API_URL = "http://127.0.0.1:8000/transcribe"

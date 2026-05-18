@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unimic"
+version = "0.1.0"
+description = "Local-first voice-typing app — speak to type anywhere on Windows"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "faster-whisper",
+    "python-multipart",
+    "pynput",
+    "sounddevice",
+    "scipy",
+    "numpy",
+    "requests",
+]
+
+[project.scripts]
+unimic-server = "unimic.server:main"
+unimic-client = "unimic.client:main"
+
+[tool.setuptools.packages.find]
+include = ["unimic*"]
