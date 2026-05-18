@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+faster-whisper
+python-multipart
+pynput
+sounddevice
+scipy
+numpy
+requests
