@@ -19,5 +19,13 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+# Whisper model files (downloaded locally)
+models/
+
 # Temp audio files
 *.wav
+
+# Electron
+electron/node_modules/
+electron/dist/
+release/

@@ -1,0 +1,59 @@
+{
+  "name": "unimic",
+  "version": "1.0.0",
+  "description": "A local-first voice-typing app that floats on your screen — speak to type anywhere",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && electron .",
+    "start": "electron .",
+    "dist": "tsc && electron-builder",
+    "dist:win": "tsc && electron-builder --win",
+    "dist:portable": "tsc && electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.unimic.app",
+    "productName": "UniMic",
+    "directories": {
+      "output": "../release"
+    },
+    "files": [
+      "dist/**/*",
+      "../unimic/**/*",
+      "../models/**/*",
+      "../pyproject.toml",
+      "../requirements.txt"
+    ],
+    "extraResources": [
+      {
+        "from": "../env",
+        "to": "python-runtime",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "msi",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "renderer/assets/icon.ico"
+    },
+    "msi": {
+      "oneClick": false,
+      "perMachine": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "dependencies": {}
+}

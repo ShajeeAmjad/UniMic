@@ -8,7 +8,7 @@ import scipy.io.wavfile
 import sounddevice as sd
 from pynput import keyboard
 
-API_URL = "http://127.0.0.1:8000/transcribe"
+API_URL = "http://127.0.0.1:8765/transcribe"
 SAMPLE_RATE = 16000
 CHANNELS = 1
 
