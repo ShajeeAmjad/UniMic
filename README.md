@@ -26,7 +26,7 @@ git clone https://github.com/ShajeeAmjad/UniMic.git
 cd UniMic
 python -m venv venv
 venv\Scripts\activate
-pip install .
+pip install -r .\requirements.txt
 ```
 
 > Use `pip install -e .` instead if you want to edit the source without reinstalling.
